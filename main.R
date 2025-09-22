@@ -1,3 +1,6 @@
+#to insall packages in your local renv repository
+# use renv::restore()
+
 #load the packages
 source("R/loadpackages.R")
 #load the functions  
