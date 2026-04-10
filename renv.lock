@@ -33,30 +33,6 @@
       "Repository/R-Forge/DateTimeStamp": "2025-07-27 18:16:52",
       "NeedsCompilation": "no"
     },
-    "DiceKriging": {
-      "Package": "DiceKriging",
-      "Version": "1.6.0",
-      "Source": "Repository",
-      "Title": "Kriging Methods for Computer Experiments",
-      "Date": "2021-02-23",
-      "Author": "Olivier Roustant, David Ginsbourger, Yves Deville. Contributors: Clement Chevalier, Yann Richet.",
-      "Maintainer": "Olivier Roustant <roustant@insa-toulouse.fr>",
-      "Description": "Estimation, validation and prediction of kriging models. Important functions : km, print.km, plot.km, predict.km.",
-      "Depends": [
-        "methods"
-      ],
-      "Suggests": [
-        "rgenoud (>= 5.8-2.0)",
-        "foreach",
-        "doParallel",
-        "testthat",
-        "numDeriv"
-      ],
-      "License": "GPL-2 | GPL-3",
-      "URL": "https://dicekrigingclub.github.io/www/",
-      "NeedsCompilation": "yes",
-      "Repository": "CRAN"
-    },
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-64",
@@ -182,7 +158,8 @@
       "NeedsCompilation": "no",
       "Author": "Winston Chang [aut, cre]",
       "Maintainer": "Winston Chang <winston@stdout.org>",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Encoding": "UTF-8"
     },
     "RColorBrewer": {
       "Package": "RColorBrewer",
@@ -227,8 +204,7 @@
       "RoxygenNote": "6.1.1",
       "Encoding": "UTF-8",
       "NeedsCompilation": "yes",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "RcppEigen": {
       "Package": "RcppEigen",
@@ -379,8 +355,7 @@
       "Collate": "'AssertCollection.R' 'allMissing.R' 'anyInfinite.R' 'anyMissing.R' 'anyNaN.R' 'asInteger.R' 'assert.R' 'helper.R' 'makeExpectation.R' 'makeTest.R' 'makeAssertion.R' 'checkAccess.R' 'checkArray.R' 'checkAtomic.R' 'checkAtomicVector.R' 'checkCharacter.R' 'checkChoice.R' 'checkClass.R' 'checkComplex.R' 'checkCount.R' 'checkDataFrame.R' 'checkDataTable.R' 'checkDate.R' 'checkDirectoryExists.R' 'checkDisjunct.R' 'checkDouble.R' 'checkEnvironment.R' 'checkFALSE.R' 'checkFactor.R' 'checkFileExists.R' 'checkFlag.R' 'checkFormula.R' 'checkFunction.R' 'checkInt.R' 'checkInteger.R' 'checkIntegerish.R' 'checkList.R' 'checkLogical.R' 'checkMatrix.R' 'checkMultiClass.R' 'checkNamed.R' 'checkNames.R' 'checkNull.R' 'checkNumber.R' 'checkNumeric.R' 'checkOS.R' 'checkPOSIXct.R' 'checkPathForOutput.R' 'checkPermutation.R' 'checkR6.R' 'checkRaw.R' 'checkScalar.R' 'checkScalarNA.R' 'checkSetEqual.R' 'checkString.R' 'checkSubset.R' 'checkTRUE.R' 'checkTibble.R' 'checkVector.R' 'coalesce.R' 'isIntegerish.R' 'matchArg.R' 'qassert.R' 'qassertr.R' 'vname.R' 'wfwl.R' 'zzz.R'",
       "Author": "Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>), Bernd Bischl [ctb], Dénes Tóth [ctb] (<https://orcid.org/0000-0003-4262-3217>)",
       "Maintainer": "Michel Lang <michellang@gmail.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "RSPM"
     },
     "class": {
       "Package": "class",
@@ -453,8 +428,7 @@
       "NeedsCompilation": "yes",
       "Author": "Gábor Csárdi [aut, cre], Hadley Wickham [ctb], Kirill Müller [ctb], RStudio [cph, fnd]",
       "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "clue": {
       "Package": "clue",
@@ -634,7 +608,8 @@
       "NeedsCompilation": "yes",
       "Author": "Tyson Barrett [aut, cre], Matt Dowle [aut], Arun Srinivasan [aut], Jan Gorecki [aut], Michael Chirico [aut], Toby Hocking [aut] (<https://orcid.org/0000-0002-3146-0865>), Pasha Stetsenko [ctb], Tom Short [ctb], Steve Lianoglou [ctb], Eduard Antonyan [ctb], Markus Bonsch [ctb], Hugh Parsonage [ctb], Scott Ritchie [ctb], Kun Ren [ctb], Xianying Tan [ctb], Rick Saporta [ctb], Otto Seiskari [ctb], Xianghui Dong [ctb], Michel Lang [ctb], Watal Iwasaki [ctb], Seth Wenchel [ctb], Karl Broman [ctb], Tobias Schmidt [ctb], David Arenburg [ctb], Ethan Smith [ctb], Francois Cocquemas [ctb], Matthieu Gomez [ctb], Philippe Chataignon [ctb], Nello Blaser [ctb], Dmitry Selivanov [ctb], Andrey Riabushenko [ctb], Cheng Lee [ctb], Declan Groves [ctb], Daniel Possenriede [ctb], Felipe Parages [ctb], Denes Toth [ctb], Mus Yaramaz-David [ctb], Ayappan Perumal [ctb], James Sams [ctb], Martin Morgan [ctb], Michael Quinn [ctb], @javrucebo [ctb], @marc-outins [ctb], Roy Storey [ctb], Manish Saraswat [ctb], Morgan Jacob [ctb], Michael Schubmehl [ctb], Davis Vaughan [ctb], Leonardo Silvestri [ctb], Jim Hester [ctb], Anthony Damico [ctb], Sebastian Freundt [ctb], David Simons [ctb], Elliott Sales de Andrade [ctb], Cole Miller [ctb], Jens Peder Meldgaard [ctb], Vaclav Tlapak [ctb], Kevin Ushey [ctb], Dirk Eddelbuettel [ctb], Benjamin Schwendinger [ctb], Tony Fischetti [ctb], Ofek Shilon [ctb], Vadim Khotilovich [ctb], Hadley Wickham [ctb], Bennet Becker [ctb], Kyle Haynes [ctb], Boniface Christian Kamgang [ctb], Olivier Delmarcell [ctb], Josh O'Brien [ctb], Dereck de Mezquita [ctb], Michael Czekanski [ctb]",
       "Maintainer": "Tyson Barrett <t.barrett88@gmail.com>",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Encoding": "UTF-8"
     },
     "digest": {
       "Package": "digest",
@@ -660,8 +635,7 @@
       ],
       "VignetteBuilder": "simplermarkdown",
       "NeedsCompilation": "yes",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "diptest": {
       "Package": "diptest",
@@ -1173,8 +1147,7 @@
       "NeedsCompilation": "yes",
       "Author": "Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>), Jennifer Bryan [aut, cre] (<https://orcid.org/0000-0002-6983-2759>), RStudio [cph, fnd]",
       "Maintainer": "Jennifer Bryan <jenny@rstudio.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "gridExtra": {
       "Package": "gridExtra",
@@ -2169,28 +2142,28 @@
     },
     "mlr3pipelines": {
       "Package": "mlr3pipelines",
-      "Version": "0.9.0",
+      "Version": "0.10.0",
       "Source": "Repository",
       "Title": "Preprocessing Operators and Pipelines for 'mlr3'",
-      "Authors@R": "c(person(given = \"Martin\", family = \"Binder\", role = c(\"aut\", \"cre\"), email = \"mlr.developer@mb706.com\"), person(given = \"Florian\", family = \"Pfisterer\", role = \"aut\", email = \"pfistererf@googlemail.com\", comment = c(ORCID = \"0000-0001-8867-762X\")), person(given = \"Lennart\", family = \"Schneider\", role = \"aut\", email = \"lennart.sch@web.de\", comment = c(ORCID = \"0000-0003-4152-5308\")), person(given = \"Bernd\", family = \"Bischl\", role = \"aut\", email = \"bernd_bischl@gmx.net\", comment = c(ORCID = \"0000-0001-6002-6980\")), person(given = \"Michel\", family = \"Lang\", role = \"aut\", email = \"michellang@gmail.com\", comment = c(ORCID = \"0000-0001-9754-0393\")), person(given = \"Sebastian\", family = \"Fischer\", role = \"aut\", email = \"sebf.fischer@gmail.com\", comment = c(ORCID = \"0000-0002-9609-3197\")), person(given = \"Susanne\", family = \"Dandl\", role = \"aut\", email = \"dandl.susanne@googlemail.com\"), person(given = \"Keno\", family = \"Mersmann\", role = \"ctb\", email = \"keno.mersmann@gmail.com\"), person(given = \"Maximilian\", family = \"Mücke\", role = \"ctb\", email = \"muecke.maximilian@gmail.com\", comment = c(ORCID = \"0009-0000-9432-9795\")), person(given = \"Lona\", family = \"Koers\", role = \"ctb\", email = \"lona.koers@gmail.com\"))",
+      "Authors@R": "c(person(given = \"Martin\", family = \"Binder\", role = c(\"aut\", \"cre\"), email = \"mlr.developer@mb706.com\"), person(given = \"Florian\", family = \"Pfisterer\", role = \"aut\", email = \"pfistererf@googlemail.com\", comment = c(ORCID = \"0000-0001-8867-762X\")), person(given = \"Lennart\", family = \"Schneider\", role = \"aut\", email = \"lennart.sch@web.de\", comment = c(ORCID = \"0000-0003-4152-5308\")), person(given = \"Bernd\", family = \"Bischl\", role = \"aut\", email = \"bernd_bischl@gmx.net\", comment = c(ORCID = \"0000-0001-6002-6980\")), person(given = \"Michel\", family = \"Lang\", role = \"aut\", email = \"michellang@gmail.com\", comment = c(ORCID = \"0000-0001-9754-0393\")), person(given = \"Sebastian\", family = \"Fischer\", role = \"aut\", email = \"sebf.fischer@gmail.com\", comment = c(ORCID = \"0000-0002-9609-3197\")), person(given = \"Susanne\", family = \"Dandl\", role = \"aut\", email = \"dandl.susanne@googlemail.com\"), person(given = \"Keno\", family = \"Mersmann\", role = \"ctb\", email = \"keno.mersmann@gmail.com\"), person(given = \"Maximilian\", family = \"Mücke\", role = \"ctb\", email = \"muecke.maximilian@gmail.com\", comment = c(ORCID = \"0009-0000-9432-9795\")), person(given = \"Lona\", family = \"Koers\", role = \"ctb\", email = \"lona.koers@gmail.com\"), person(given = \"Alexander\", family = \"Winterstetter\", role = \"ctb\", email = \"alexander.winterstetter@gmail.com\"))",
       "Description": "Dataflow programming toolkit that enriches 'mlr3' with a diverse set of pipelining operators ('PipeOps') that can be composed into graphs. Operations exist for data preprocessing, model fitting, and ensemble learning. Graphs can themselves be treated as 'mlr3' 'Learners' and can therefore be resampled, benchmarked, and tuned.",
       "License": "LGPL-3",
       "URL": "https://mlr3pipelines.mlr-org.com, https://github.com/mlr-org/mlr3pipelines",
       "BugReports": "https://github.com/mlr-org/mlr3pipelines/issues",
       "Depends": [
-        "R (>= 3.3.0)"
+        "R (>= 4.1.0)"
       ],
       "Imports": [
         "backports",
         "checkmate",
+        "cli",
         "data.table",
         "digest",
         "lgr",
         "mlr3 (>= 0.20.0)",
         "mlr3misc (>= 0.17.0)",
         "paradox (>= 1.0.0)",
-        "R6",
-        "withr"
+        "R6"
       ],
       "Suggests": [
         "ggplot2",
@@ -2223,17 +2196,20 @@
         "future",
         "htmlwidgets",
         "ranger",
-        "themis"
+        "themis",
+        "dimRed",
+        "RSpectra",
+        "RANN"
       ],
       "ByteCompile": "true",
       "Encoding": "UTF-8",
       "Config/testthat/edition": "3",
       "Config/testthat/parallel": "true",
       "NeedsCompilation": "no",
-      "RoxygenNote": "7.3.2",
+      "RoxygenNote": "7.3.3",
       "VignetteBuilder": "knitr, rmarkdown",
-      "Collate": "'CnfAtom.R' 'CnfClause.R' 'CnfFormula.R' 'CnfFormula_simplify.R' 'CnfSymbol.R' 'CnfUniverse.R' 'Graph.R' 'GraphLearner.R' 'mlr_pipeops.R' 'multiplicity.R' 'utils.R' 'PipeOp.R' 'PipeOpEnsemble.R' 'LearnerAvg.R' 'NO_OP.R' 'PipeOpTaskPreproc.R' 'PipeOpADAS.R' 'PipeOpBLSmote.R' 'PipeOpBoxCox.R' 'PipeOpBranch.R' 'PipeOpChunk.R' 'PipeOpClassBalancing.R' 'PipeOpClassWeights.R' 'PipeOpClassifAvg.R' 'PipeOpColApply.R' 'PipeOpColRoles.R' 'PipeOpCollapseFactors.R' 'PipeOpCopy.R' 'PipeOpDateFeatures.R' 'PipeOpDecode.R' 'PipeOpEncode.R' 'PipeOpEncodeImpact.R' 'PipeOpEncodeLmer.R' 'PipeOpEncodePL.R' 'PipeOpFeatureUnion.R' 'PipeOpFilter.R' 'PipeOpFixFactors.R' 'PipeOpHistBin.R' 'PipeOpICA.R' 'PipeOpImpute.R' 'PipeOpImputeConstant.R' 'PipeOpImputeHist.R' 'PipeOpImputeLearner.R' 'PipeOpImputeMean.R' 'PipeOpImputeMedian.R' 'PipeOpImputeMode.R' 'PipeOpImputeOOR.R' 'PipeOpImputeSample.R' 'PipeOpKernelPCA.R' 'PipeOpLearner.R' 'PipeOpLearnerCV.R' 'PipeOpLearnerPICVPlus.R' 'PipeOpLearnerQuantiles.R' 'PipeOpMissingIndicators.R' 'PipeOpModelMatrix.R' 'PipeOpMultiplicity.R' 'PipeOpMutate.R' 'PipeOpNMF.R' 'PipeOpNOP.R' 'PipeOpNearmiss.R' 'PipeOpOVR.R' 'PipeOpPCA.R' 'PipeOpProxy.R' 'PipeOpQuantileBin.R' 'PipeOpRandomProjection.R' 'PipeOpRandomResponse.R' 'PipeOpRegrAvg.R' 'PipeOpRemoveConstants.R' 'PipeOpRenameColumns.R' 'PipeOpRowApply.R' 'PipeOpScale.R' 'PipeOpScaleMaxAbs.R' 'PipeOpScaleRange.R' 'PipeOpSelect.R' 'PipeOpSmote.R' 'PipeOpSmoteNC.R' 'PipeOpSpatialSign.R' 'PipeOpSubsample.R' 'PipeOpTextVectorizer.R' 'PipeOpThreshold.R' 'PipeOpTomek.R' 'PipeOpTrafo.R' 'PipeOpTuneThreshold.R' 'PipeOpUnbranch.R' 'PipeOpVtreat.R' 'PipeOpYeoJohnson.R' 'Selector.R' 'TaskRegr_boston_housing.R' 'assert_graph.R' 'bibentries.R' 'greplicate.R' 'gunion.R' 'mlr_graphs.R' 'operators.R' 'pipeline_bagging.R' 'pipeline_branch.R' 'pipeline_convert_types.R' 'pipeline_greplicate.R' 'pipeline_ovr.R' 'pipeline_robustify.R' 'pipeline_stacking.R' 'pipeline_targettrafo.R' 'po.R' 'ppl.R' 'preproc.R' 'reexports.R' 'typecheck.R' 'zzz.R'",
-      "Author": "Martin Binder [aut, cre], Florian Pfisterer [aut] (ORCID: <https://orcid.org/0000-0001-8867-762X>), Lennart Schneider [aut] (ORCID: <https://orcid.org/0000-0003-4152-5308>), Bernd Bischl [aut] (ORCID: <https://orcid.org/0000-0001-6002-6980>), Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>), Sebastian Fischer [aut] (ORCID: <https://orcid.org/0000-0002-9609-3197>), Susanne Dandl [aut], Keno Mersmann [ctb], Maximilian Mücke [ctb] (ORCID: <https://orcid.org/0009-0000-9432-9795>), Lona Koers [ctb]",
+      "Collate": "'CnfAtom.R' 'CnfClause.R' 'CnfFormula.R' 'CnfFormula_simplify.R' 'CnfSymbol.R' 'CnfUniverse.R' 'FilterEnsemble.R' 'Graph.R' 'GraphLearner.R' 'mlr_pipeops.R' 'multiplicity.R' 'utils.R' 'PipeOp.R' 'PipeOpEnsemble.R' 'LearnerAvg.R' 'NO_OP.R' 'PipeOpTaskPreproc.R' 'PipeOpADAS.R' 'PipeOpBLSmote.R' 'PipeOpBoxCox.R' 'PipeOpBranch.R' 'PipeOpChunk.R' 'PipeOpClassBalancing.R' 'PipeOpClassWeights.R' 'PipeOpClassifAvg.R' 'PipeOpColApply.R' 'PipeOpColRoles.R' 'PipeOpCollapseFactors.R' 'PipeOpCopy.R' 'PipeOpDateFeatures.R' 'PipeOpDecode.R' 'PipeOpEncode.R' 'PipeOpEncodeImpact.R' 'PipeOpEncodeLmer.R' 'PipeOpEncodePL.R' 'PipeOpFeatureUnion.R' 'PipeOpFilter.R' 'PipeOpFixFactors.R' 'PipeOpHistBin.R' 'PipeOpICA.R' 'PipeOpImpute.R' 'PipeOpImputeConstant.R' 'PipeOpImputeHist.R' 'PipeOpImputeLearner.R' 'PipeOpImputeMean.R' 'PipeOpImputeMedian.R' 'PipeOpImputeMode.R' 'PipeOpImputeOOR.R' 'PipeOpImputeSample.R' 'PipeOpInfo.R' 'PipeOpIsomap.R' 'PipeOpKernelPCA.R' 'PipeOpLearner.R' 'PipeOpLearnerCV.R' 'PipeOpLearnerPICVPlus.R' 'PipeOpLearnerQuantiles.R' 'PipeOpMissingIndicators.R' 'PipeOpModelMatrix.R' 'PipeOpMultiplicity.R' 'PipeOpMutate.R' 'PipeOpNMF.R' 'PipeOpNOP.R' 'PipeOpNearmiss.R' 'PipeOpOVR.R' 'PipeOpPCA.R' 'PipeOpProxy.R' 'PipeOpQuantileBin.R' 'PipeOpRandomProjection.R' 'PipeOpRandomResponse.R' 'PipeOpRegrAvg.R' 'PipeOpRemoveConstants.R' 'PipeOpRenameColumns.R' 'PipeOpRowApply.R' 'PipeOpScale.R' 'PipeOpScaleMaxAbs.R' 'PipeOpScaleRange.R' 'PipeOpSelect.R' 'PipeOpSmote.R' 'PipeOpSmoteNC.R' 'PipeOpSpatialSign.R' 'PipeOpSubsample.R' 'PipeOpTextVectorizer.R' 'PipeOpThreshold.R' 'PipeOpTomek.R' 'PipeOpTrafo.R' 'PipeOpTuneThreshold.R' 'PipeOpUnbranch.R' 'PipeOpVtreat.R' 'PipeOpYeoJohnson.R' 'Selector.R' 'TaskRegr_boston_housing.R' 'assert_graph.R' 'bibentries.R' 'greplicate.R' 'gunion.R' 'mlr_graphs.R' 'operators.R' 'pipeline_bagging.R' 'pipeline_branch.R' 'pipeline_convert_types.R' 'pipeline_greplicate.R' 'pipeline_ovr.R' 'pipeline_robustify.R' 'pipeline_stacking.R' 'pipeline_targettrafo.R' 'po.R' 'ppl.R' 'preproc.R' 'reexports.R' 'typecheck.R' 'zzz.R'",
+      "Author": "Martin Binder [aut, cre], Florian Pfisterer [aut] (ORCID: <https://orcid.org/0000-0001-8867-762X>), Lennart Schneider [aut] (ORCID: <https://orcid.org/0000-0003-4152-5308>), Bernd Bischl [aut] (ORCID: <https://orcid.org/0000-0001-6002-6980>), Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>), Sebastian Fischer [aut] (ORCID: <https://orcid.org/0000-0002-9609-3197>), Susanne Dandl [aut], Keno Mersmann [ctb], Maximilian Mücke [ctb] (ORCID: <https://orcid.org/0009-0000-9432-9795>), Lona Koers [ctb], Alexander Winterstetter [ctb]",
       "Maintainer": "Martin Binder <mlr.developer@mb706.com>",
       "Repository": "CRAN"
     },
@@ -2782,8 +2758,7 @@
       "NeedsCompilation": "yes",
       "Author": "Hadley Wickham [aut, cre] (<https://orcid.org/0000-0003-4757-117X>), Lionel Henry [aut], RStudio [cph, fnd]",
       "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "RSPM"
     },
     "ranger": {
       "Package": "ranger",
@@ -2872,28 +2847,6 @@
       "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
       "Repository": "CRAN"
     },
-    "rgenoud": {
-      "Package": "rgenoud",
-      "Version": "5.9-0.11",
-      "Source": "Repository",
-      "Date": "2024-10-03",
-      "Title": "R Version of GENetic Optimization Using Derivatives",
-      "Authors@R": "c( person(\"Walter\", \"R. Mebane, Jr\", role = \"aut\", email = \"wmebane@umich.edu\"), person(\"Jasjeet\", \"Singh Sekhon\", role = c(\"aut\",\"cre\"), email = \"jas.sekhon@yale.edu\"), person(\"Theo\", \"Saarinen\", role = \"aut\", email = \"theo_s@berkeley.edu\") )",
-      "Maintainer": "Jasjeet Singh Sekhon <jas.sekhon@yale.edu>",
-      "Description": "A genetic algorithm plus derivative optimizer.",
-      "Depends": [
-        "R (>= 2.15)",
-        "utils"
-      ],
-      "Suggests": [
-        "testthat"
-      ],
-      "License": "GPL-3",
-      "URL": "https://github.com/JasjeetSekhon/rgenoud",
-      "NeedsCompilation": "yes",
-      "Author": "Walter R. Mebane, Jr [aut], Jasjeet Singh Sekhon [aut, cre], Theo Saarinen [aut]",
-      "Repository": "CRAN"
-    },
     "rlang": {
       "Package": "rlang",
       "Version": "1.1.1",
@@ -2940,8 +2893,7 @@
       "NeedsCompilation": "yes",
       "Author": "Lionel Henry [aut, cre], Hadley Wickham [aut], mikefc [cph] (Hash implementation based on Mike's xxhashlite), Yann Collet [cph] (Author of the embedded xxHash library), Posit, PBC [cph, fnd]",
       "Maintainer": "Lionel Henry <lionel@posit.co>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "robustbase": {
       "Package": "robustbase",
@@ -3251,8 +3203,7 @@
       "NeedsCompilation": "yes",
       "Author": "Kirill Müller [aut, cre] (<https://orcid.org/0000-0002-1416-3412>), Hadley Wickham [aut], Romain Francois [ctb], Jennifer Bryan [ctb], RStudio [cph, fnd]",
       "Maintainer": "Kirill Müller <kirill@cynkra.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "RSPM"
     },
     "tidyr": {
       "Package": "tidyr",
@@ -3376,8 +3327,7 @@
       "NeedsCompilation": "yes",
       "Author": "Patrick O. Perry [aut, cph], Kirill Müller [cre], Unicode, Inc. [cph, dtc] (Unicode Character Database)",
       "Maintainer": "Kirill Müller <kirill@cynkra.com>",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "uuid": {
       "Package": "uuid",
@@ -3394,8 +3344,7 @@
       "URL": "https://www.rforge.net/uuid",
       "BugReports": "https://github.com/s-u/uuid",
       "NeedsCompilation": "yes",
-      "Repository": "CRAN",
-      "ExperimentalWindowsRuntime": "ucrt"
+      "Repository": "CRAN"
     },
     "vctrs": {
       "Package": "vctrs",
