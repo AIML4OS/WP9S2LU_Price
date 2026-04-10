@@ -15,10 +15,10 @@ This real-world example helps us to validate the ML-based imputation approach an
 
 To experiment with the process, you can run the main.R script. This script executes a generic function called *ML_model*, which applies various machine learning models for price imputation on an example data set.
 The function is built upon the [mlr3](https://mlr-org.com/) ecosystem. 
-The obtained model can then be used to make imputations with the *imputations* function
+The obtained model can then be used to make imputations with the *imputations* function. Finally, a price index is compiled using both observed and imputed prices with the function *price_index*.
 
 
-The primary input to the *ML_model* function is a dataset where each row represents a unique combination of an item and a time period. For each combination, a price may or may not be available. 
+The primary input to the *ML_model* function is a dataset where each row represents a unique combination of an item and a time period. For each combination, a price is available. 
 Additionally, a set of features is provided for each item.
 
 
@@ -38,7 +38,9 @@ The *ML_model* function returns an mlr3 obhect that contains the results of appl
 to a learner with tuned hyperparameters on the data. The *imputations* function returns a dataframe that includes, for each item-time period pair:
 
 - The observed price (if available)
-- Multiple imputed price estimates. These imputed variants arise from different models used in each resampling round.
+- Multiple imputed price estimates for each item in each period.
+
+The *price_index* compiles a quality adjsuted price index using the output from the previous function. 
 
 
 An example usage is included in the main.R script, demonstrating the process with a simple configuration
@@ -49,14 +51,16 @@ An example usage is included in the main.R script, demonstrating the process wit
 model_lm <- ML_model(
   # name of the datafranme
   data = mydata,  
-  # target variable: here the log price
+  # target variable
   target_var = "P", 
   # the time variable
   time_var = "TD",
   # the variable that identifies a product
   id = "JAN", 
   # the features that will be transformed using hotdeck encoding
-  variables_onehot = variables_onehot, 
+  variables_onehot = variables_onehot,
+  # the features that will be transformed using impact encoding
+  variables_impact = variables_impact,
   # the learner that we use: here linear regression
   learner = lrn("regr.lm"),
   #the parameters of the cross-validation: folds and number of time periods 
@@ -69,15 +73,31 @@ model_lm <- ML_model(
 impdata_lm <- imputations(
   # name of the datafranme
   data = mydata,  
-  # target variable: here the log price
+  # target variable
   target_var = "P", 
   # the time variable
   time_var = "TD",
   # the variable that identifies a product
   id = "JAN", 
-  # the Model
-  model = model_lm
+  # the model
+  learner = model_lm
 ) 
+
+
+# Calculate an aggregated price index
+index_lm <- price_index(
+                        #name of the dataframe obtained with the imputations function
+                        imputations = impdata_lm,
+                        # target variable: here the price
+                        target_var = "P", 
+                        # the time variable
+                        time_var = "TD",
+                        # name of the index
+                        name_index = "LM"
+)
+
+
+
 
 
 ```
@@ -96,9 +116,7 @@ The data cover sales of laptop computers across Japan. The following variables a
 - P: the log price 
 - CLOCK, MEN, SIZE, PIX, HDMI, BRAND: product characteristics 
 
-We limit the data set to the 13 first periods (January 2020 to January 2021), that we recoded as 1, 2, .. 13. There are 275 different items that appear in at least one of these 13 periods. 
-Consequently the data set contains 13*275 = 3575 lines. 
-
+We limit the data set to the 13 first periods (January 2020 to January 2021), that we recoded as 1, 2, .. 13. 
 The function "prepare_data" uses as input a csv file with the data from the paper and prepares a dataframe with the required format. 
 
 
@@ -106,25 +124,36 @@ The function "prepare_data" uses as input a csv file with the data from the pape
 
 ### Process
 
-The process is based on a pipeline  that can be described as follows:
+The input dataset is split into training and testing subsets. The pipeline is applied exclusively to the training set, and the resulting model is evaluated on the corresponding test set. This approach ensures that data leakage between the training and testing sets is avoided. The pipeline  can be described as follows:
 
 
 ```mermaid
- graph TD
-    A[Start] --> B[One-hot Encoding<br>for selected features, including the time variable]
-    B --> C[Impact Encoding<br>for time variable]
-    C --> D[Remove ID variable]
-    D --> E[Apply specific ML method]
-    E --> F[End] 
+flowchart TD
+
+    INPUT["Raw Dataset"]
+    targetmutate["Log transformation of the price"]
+    encodeimpact["Impact Encoder"]
+    encode["One‑Hot Encoding"]
+    select["Feature Selection"]
+    base_learner["Model Training"]
+    featureunion["Combine predictions of the ML model with the features of the ML model"]
+    select_bias["Select ML predictions and time dummies"]
+    bias_adjustment["Centering of ML predictions"]
+    targetinvert["Inverse Transformation"]
+    OUTPUT["Predictions"]
+
+
+    INPUT --> targetmutate --> encodeimpact --> encode --> select --> featureunion --> select_bias --> bias_adjustment --> targetinvert --> OUTPUT
+
+    select --> base_learner --> featureunion
+
+    targetmutate --> targetinvert
 ```
 
-The time variable is included twice in the pipeline. First, it undergoes one-hot encoding, transforming categorical time periods into time dummy indicators.
-Then, it is transformed using impact encoding, which computes the difference between the average target value (log price) within a specific time period and the overall average target value across the dataset.
-The initial dataset is restricted to observations where the target variable (log price) is available. This dataset is then split into training and testing subsets. The pipeline is applied exclusively to the training set, and the resulting model is evaluated on the corresponding test set. This approach ensures that data leakage between the training and testing sets is avoided.
 
 Many machine learning models depend on a set of hyperparameters that must be carefully selected. To address this, we perform Hyperparameter Optimization (HPO) within a predefined search space. We use a Bayesian optimization strategy, available through the mlr3 package, to identify a set of hyperparameters that perform well for the data at hand.
 
-Once optimal hyperparameters are determined, we train models on various train-test splits using these parameters in roder to evaluate model performance. Performance is assessed using Root Mean Square Error measure.
+Once optimal hyperparameters are determined, we train models on various train-test splits using these parameters in roder to evaluate model performance. Performance is assessed using various metrics.
 
 Each train-test split results in a distinct model. These individual models are used to generate price estimates, meaning the total number of price predictions corresponds to the number of resampling rounds performed. For each item, we also compute the average estimated price across all models. Finally we indicate if an item was included in the test set (and not the train set) of a specific round.
 
@@ -174,6 +203,27 @@ benchmark or baseline model. It only relies on the time and item identifiers and
 This is a learner that combines two different models: first a linear regression on the target variable, followed by random forest on the residuals of the previous model
 
 
+### Price index
+We compile an exact hedonic imputation price index between any two periods. This index is based on two baskets: the set of products available 
+in the first period t1 and the set of products available in the second period t2. For each basket we compare the observed prices to
+the imputed prices. Formally this index is defined as follows:
+
+$$
+I^{12} =
+\sqrt{
+\prod_{i \in N_1}
+\left(
+\frac{\hat{p}_i^{t_2}}{p_i^{t_1}}
+\right)^{\frac{1}{n_1}}
+\prod_{i \in N_2}
+\left(
+\frac{p_i^{t_2}}{\hat{p}_i^{t_1}}
+\right)^{\frac{1}{n_2}}
+}
+$$
+
+
+Bilateral hedonic imputation price indices are subsequently aggregated into a multilateral GEKS (Gini–Eltetö–Köves–Szulc) index normalized to the first period.
 
 
 
